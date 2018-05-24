@@ -10,7 +10,7 @@ Background:
 
 Scenario: User signs_up for account
   Given I am on the landing page
-  When I click "Sign up"
+  When I click "Sign Up"
   And I fill in "Email" with "test@test.com"
   And I fill in "Password" with "123456"
   And I click "Sign up"
