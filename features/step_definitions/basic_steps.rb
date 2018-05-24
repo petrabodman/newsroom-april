@@ -7,3 +7,13 @@ Given("we have the following articles") do |table|
     create(:article, article)
   end
 end
+
+Given("we have the following user") do |table|
+  table.hashes.each do |user|
+    create(:user, user)
+  end
+end
+
+When("I click {string}") do |link|
+  click_link_or_button link
+end
