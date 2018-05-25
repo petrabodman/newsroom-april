@@ -21,3 +21,8 @@ end
 When("I fill in {string} with {string}") do |field, text|
   fill_in field, with: text
 end
+
+Given("I am signed in") do
+  user = create(:user)
+  login_as user
+end
