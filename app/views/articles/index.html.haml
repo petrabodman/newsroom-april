@@ -1,8 +1,15 @@
 .wrapper 
   %h1 The News Room
 
+  #category-bar
+    = link_to "All", root_path
+    - @categories.each do |category|
+      |
+      = link_to category.name, category_path(category)
+  %hr
+
   .articles.bg-grey
-  .center
-    #article-list
-      - @articles.each do |article|
-        %h3= link_to article.headline, article_path(article)
+    .center
+      #article-list
+        - @articles.each do |article|
+          %h3= link_to article.headline, article_path(article)
