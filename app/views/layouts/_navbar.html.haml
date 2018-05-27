@@ -1,3 +1,10 @@
-= link_to "Create Article", new_article_path
-= link_to "Sign In", new_user_session_path
-= link_to "Sign Up", new_user_registration_path
+.wrapper
+  .navbar.py-6
+
+    .links
+      = link_to "Create Article", new_article_path
+      %ul.flex.flex-row-reverse.items-center.list-reset
+        %li.-4
+          %a.no-underline.text-white.hover:text-black
+            = link_to "Sign In", new_user_session_path
+            = link_to "Sign Up", new_user_registration_path

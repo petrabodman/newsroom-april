@@ -1,5 +1,8 @@
-%h1 News Room
+.wrapper
+  %h1 News Room
 
-#article-list
-  - @articles.each do |article|
-    %h3= link_to article.headline, article_path(article)
+.articles.bg-grey
+  .center
+    #article-list
+      - @articles.each do |article|
+        %h3= link_to article.headline, article_path(article)
