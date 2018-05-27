@@ -65,22 +65,34 @@
   .wrapper {
      display: grid;
      grid-template-columns: 1fr;
-     grid-template-rows: 200;
+     grid-template-rows: 95;
      grid-template-areas:
-     'header'
-     'News Room'
-    }
+     "navbar"
+     "articles"
 
+  }  
+
+   
   .articles {
-     grid-area: projects;
-     background-color: #F1F1F2;
-     h1, h3, p {
-      text-align: center;
-     }
+    
+     grid-area: articles;
+     /* background-color: #BCBABE; */
   }
 
+  h1 {
+    text-align: center;
+    background-color: blueviolet;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 62px;
+   } 
+
+    h3, p {
+      text-align: left;
+    } 
+  
+
   .navbar {
-     grid-area: header;
+     grid-area: navbar;
      background: #1995AD;
      color: #BCBABE;
      position: fixed;
