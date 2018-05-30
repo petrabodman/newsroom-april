@@ -13,6 +13,10 @@ Background:
     And I fill in "Email" with "test@test.com"
     And I fill in "Password" with "12345678"
     And I click "Sign Up"
-    Then I should see "Final Signup Step"
-    And I click "Pay with Card"
-    And I should see "6 month subscription"
+    Then I click "Pay with Card" stripe button
+    And I fill in the stripe field "Card number" with "4242 4242 4242 4242"
+    And I fill in the stripe field "CVC" with "123"
+    And I fill in the stripe field "Expiry" with "12/2020"
+    And I submit stripe form
+    Then I should be on the landing page
+    And I should see "Welcome as a subscriber"
