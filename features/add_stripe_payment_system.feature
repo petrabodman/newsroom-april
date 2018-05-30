@@ -13,7 +13,9 @@ Background:
     And I fill in "Email" with "test@test.com"
     And I fill in "Password" with "12345678"
     And I click "Sign Up"
-    Then I click "Pay with Card" stripe button
+    And show me the page
+    Then I click "Become subscriber" stripe button
+    And I click "Pay with Card" stripe button
     And I fill in the stripe field "Card number" with "4242 4242 4242 4242"
     And I fill in the stripe field "CVC" with "123"
     And I fill in the stripe field "Expiry" with "12/2020"
