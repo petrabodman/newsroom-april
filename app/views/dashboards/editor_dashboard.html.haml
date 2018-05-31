@@ -1,0 +1,10 @@
+%h1 Editor's Dashboard
+
+#unpublished-articles
+  -if @articles != nil
+    - @articles.each do |article|
+      %p= link_to article.headline, article_path(article)
+      %p= link_to "Approve Article", approve_path(article), method: :post
+
+
+#unpublished-comments

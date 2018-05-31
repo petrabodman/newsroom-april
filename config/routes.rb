@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :index]
   end
   resources :categories, only: [:show]
+  get :dashboard, controller: :dashboards, action: :editor_dashboard
+  post :approve, controller: :dashboards, action: :approve_article
   root controller: :articles, action: :index
 end
