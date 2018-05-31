@@ -37,3 +37,7 @@ Given("I am on the {string} page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit article_path(article)
 end
+
+Given("I click {string} stripe button") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
