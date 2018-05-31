@@ -18,6 +18,6 @@ def update
     current_user.stripeid = customer.id
     current_user.save
 
-    redirect_to article_path
+    redirect_to root_path
   end
 end
