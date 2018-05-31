@@ -59,3 +59,11 @@ When("I visit {string} edit page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit edit_article_path(article)
 end
+
+Given("we have the following comments") do |table|
+  table.hashes.each do |comment|
+    article_headline = comment["article"]
+    comment["article"] = Article.find_by(headline: article_headline)
+    create(:comment, comment)
+  end
+end
