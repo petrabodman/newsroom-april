@@ -1,5 +1,6 @@
 require 'coveralls'
 Coveralls.wear_merged!('rails')
+require 'elasticsearch/extensions/test/cluster'
 
 require 'cucumber/rails'
 
@@ -14,3 +15,11 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 World(FactoryBot::Syntax::Methods)
+
+Before do
+  Elasticsearch::Extensions::Test::Cluster.start(
+    port: 9250,
+    nodes: 1,
+    timeout: 120
+  ) unless Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
+end
