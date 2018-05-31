@@ -1,16 +1,21 @@
 %h1 Editor's Dashboard
 
+%h3 Unpublished Articles
 #unpublished-articles
   -if @articles != nil
     - @articles.each do |article|
       %p
         = link_to article.headline, article_path(article)
-        = link_to "Approve Article", approve_article_path(article), method: :post
+        |
+        = link_to "Approve Article", approve_article_path(article), method: :put
+      %p= "Written by: #{article.user.email}"
 
-
+%h3 Unpublished Comments
 #unpublished-comments
   - if @comments != nil
     - @comments.each do |comment|
       %p
         = comment.content
-        = link_to "Approve Comment", approve_comment_path(comment), method: :post
+        |
+        = link_to "Approve Comment", approve_comment_path(comment), method: :put
+      %p= "Commented by: #{comment.user.email}, on #{comment.article.headline}"
