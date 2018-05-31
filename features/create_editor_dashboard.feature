@@ -32,11 +32,11 @@ Scenario: Editor can approve an article and it will be published
   Then I should see "The awesome article"
 
 Scenario: Editor can approve a comment and it will be published on the article
-  Given I am on the "The awesome article" page
+  Given I am on the "A published article" page
   And I should not see "Fantastic"
   When I visit the editor dashboard page
   And I should see "Fantastic" in "Unpublished Comments"
   And I click "Approve Comment"
   Then I should not see "Fantastic"
-  But I am on the "The awesome article" page
+  But I am on the "A published article" page
   Then I should see "Fantastic"

@@ -3,8 +3,14 @@
 #unpublished-articles
   -if @articles != nil
     - @articles.each do |article|
-      %p= link_to article.headline, article_path(article)
-      %p= link_to "Approve Article", approve_path(article), method: :post
+      %p
+        = link_to article.headline, article_path(article)
+        = link_to "Approve Article", approve_article_path(article), method: :post
 
 
 #unpublished-comments
+  - if @comments != nil
+    - @comments.each do |comment|
+      %p
+        = comment.content
+        = link_to "Approve Comment", approve_comment_path(comment), method: :post
