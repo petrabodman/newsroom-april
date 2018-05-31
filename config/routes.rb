@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :articles, only: [:new, :create, :show, :edit, :update] do
+    collection do
+      post :search
+    end
     resources :comments, only: [:new, :create, :index]
   end
   resources :categories, only: [:show]

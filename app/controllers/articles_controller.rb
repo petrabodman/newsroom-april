@@ -40,6 +40,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    query = ArticleIndex.query(match: {headline: params[:search]})
+    @hits = query.hits
+  end
+
   private
   def article_params
     params.require(:article).permit(:headline, :content, :category_id)
