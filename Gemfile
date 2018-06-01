@@ -12,6 +12,8 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails', '~> 1.0'
 gem 'devise'
+gem 'pundit'
+gem 'rails-i18n'
 gem 'stripe'
 
 group :development, :test do
@@ -23,6 +25,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'pundit-matchers'
+  gem 'launchy'
 end
 
 group :development do
