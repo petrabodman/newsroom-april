@@ -8,7 +8,7 @@ Background:
 Given we have the following articles
   | headline                   |
   | The awesome article        |
-  | The other avesome article  |
+  | The other awesome article  |
   | Another article            |
 
 Scenario: User searches for articles in appliation
@@ -17,6 +17,6 @@ Scenario: User searches for articles in appliation
   When I fill in "Search" with "Awesome"
   And I click "Search"
   Then I should see "Found 2 articles"
-  # Then I should see "The awesome article"
-  # Then I should see "The awesome article"
-  
+  And I should see "The awesome article"
+  And I should see "The other awesome article"
+  And I should not see "Another article"

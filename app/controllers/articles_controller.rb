@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :search]
   before_action :load_categories, except: [:show]
 
   def index
@@ -41,8 +41,11 @@ class ArticlesController < ApplicationController
   end
 
   def search
+    ArticleIndex.import
     query = ArticleIndex.query(match: {headline: params[:search]})
     @hits = query.hits
+    @articles = query.objects
+    render :search
   end
 
   private
