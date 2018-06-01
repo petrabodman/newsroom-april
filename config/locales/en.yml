@@ -39,4 +39,3 @@ en:
       delete: 'Article was successfully deleted!'
     pundit:
       not_authorized: 'You are not authorized to perform this action!'
-    
