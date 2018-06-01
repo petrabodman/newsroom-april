@@ -4,6 +4,9 @@ Feature: User can search for articles
   I would like to have the ability to search for articles
 
 Background:
+  Given the following users exist
+    | email                 | role        |
+    | subscriber@test.com   | subscriber  |
 
 Given we have the following articles
   | headline                   |
@@ -12,7 +15,7 @@ Given we have the following articles
   | Another article            |
 
 Scenario: User searches for articles in appliation
-  Given user is signed in
+  Given I am signed in as "subscriber@test.com"
   And I am on the landing page
   When I fill in "Search" with "Awesome"
   And I click "Search"

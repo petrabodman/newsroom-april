@@ -1,4 +1,4 @@
-%h1= "Found #{@hits.count} articles"
+%h1= t('search.hits')
 
 - @articles.each do |article|
   %h2= article.headline

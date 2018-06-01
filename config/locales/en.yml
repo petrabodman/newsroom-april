@@ -6,6 +6,8 @@ en:
     sign_out: 'Sign Out'
     language_en: 'English'
     language_sv: 'Svenska'
+    field_search: 'Search'
+    submit_search: 'Search'
   categories:
     all_categories: 'All'
 
@@ -23,6 +25,8 @@ en:
   comment:
     comment_content: 'Comment'
     submit: 'Submit Comment'
+  search:
+    hits: 'Found %{@hits.count} articles'  
 
   flash:
     comment:
@@ -35,3 +39,4 @@ en:
       delete: 'Article was successfully deleted!'
     pundit:
       not_authorized: 'You are not authorized to perform this action!'
+    

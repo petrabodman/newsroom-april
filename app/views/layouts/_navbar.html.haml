@@ -14,5 +14,5 @@
   = link_to t("navbar.language_sv"), { locale: 'sv' }
 
 = form_with url: search_articles_path, method: :post, local: true do |form|
-  = form.text_field :search, placeholder: 'Search'
-  = form.submit 'Search'
+  = form.text_field :search, placeholder: t("navbar.field_search")
+  = form.submit t("navbar.submit_search")

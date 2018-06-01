@@ -6,8 +6,12 @@ sv:
     sign_out: 'Logga Ut'
     language_en: 'English'
     language_sv: 'Svenska'
+    field_search: 'Sök'
+    submit_search: 'Sök'
   categories:
     all_categories: 'Alla'
+  search:
+    hits: 'Found #{@hits.count} articles'  
 
   site_info:
     site_title: 'NyhetsPosten'
