@@ -1,4 +1,4 @@
-%h1= t('search.hits')
+%h1= t('search.hits', count: @hits.count)
 
 - @articles.each do |article|
   %h2= article.headline

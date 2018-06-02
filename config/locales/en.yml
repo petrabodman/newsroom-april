@@ -26,7 +26,7 @@ en:
     comment_content: 'Comment'
     submit: 'Submit Comment'
   search:
-    hits: 'Found %{@hits.count} articles'  
+    hits: 'Found %{count} articles'  
 
   flash:
     comment:

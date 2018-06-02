@@ -1,3 +1,4 @@
+@search
 Feature: User can search for articles
   As a User
   In order to find specific content or articles of interest

@@ -11,7 +11,7 @@ sv:
   categories:
     all_categories: 'Alla'
   search:
-    hits: 'Found #{@hits.count} articles'  
+    hits: 'Hittade %{count} artiklar'  
 
   site_info:
     site_title: 'NyhetsPosten'

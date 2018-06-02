@@ -59,3 +59,7 @@ When("I visit {string} edit page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit edit_article_path(article)
 end
+
+Then("show me the page") do
+  save_and_open_page
+end
