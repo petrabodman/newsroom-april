@@ -6,7 +6,7 @@
           - if user_signed_in?
             = "Signed in as: #{current_user.role.capitalize} (#{current_user.email}) |"
             = link_to(t('navbar.create'), new_article_path) + " |" if policy(Article).new?
-            = link_to t('navbar.sign_out'), destroy_user_session_path, method: :delete
+            = link_to t('navbar.sign_out'), destroy_user_session_path, { method: :delete, class: 'text-black hover:text-white' }
           - else
             = link_to t('navbar.sign_in'), new_user_session_path, { class: 'text-black hover:text-white' }
             |

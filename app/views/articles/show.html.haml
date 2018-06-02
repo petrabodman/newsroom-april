@@ -1,15 +1,22 @@
 %h3= @article.headline
+%br
 %p= @article.content
 
-%p= link_to t('article.edit_link'), edit_article_path(@article) if policy(@article).edit?
-%p= link_to t('article.delete_link'), article_path(@article), method: :delete if policy(@article).destroy?
+%br
+%p= link_to t('article.edit_link'), edit_article_path(@article), { class: 'text-black hover:text-white' } if policy(@article).edit?
+%br
+%p= link_to t('article.delete_link'), article_path(@article), { method: :delete, class: 'text-black hover:text-white' } if policy(@article).destroy?
+%br
 
 - @comments.each do |comment|
   %p= comment.content
 
 = form_with scope: :comment, url: article_comments_path(@article), local: true do |form|
+  %br
+  %br
   = form.label t('comment.comment_content')
   = form.text_field :content, placeholder: t('comment.comment_content')
   = form.submit t('comment.submit'), { class: 'text-black hover:text-white' }
 
+%br
 = link_to t('article.back_link'), root_path, { class: 'text-black hover:text-white' }
