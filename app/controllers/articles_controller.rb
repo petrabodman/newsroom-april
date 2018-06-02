@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
     @articles = query.objects
     render :search
   end
-  
+
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
