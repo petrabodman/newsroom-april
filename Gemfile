@@ -13,6 +13,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails', '~> 1.0'
 gem 'devise'
 gem 'webpacker', '~> 3.4'
+gem 'pundit'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'coveralls', require: false
@@ -23,6 +25,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'pundit-matchers'
+  gem 'launchy'
 end
 
 group :development do
