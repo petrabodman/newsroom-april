@@ -2,7 +2,6 @@
   .navbar.py-6
 
     .links
-      = link_to "Create Article", new_article_path
       %ul.flex.flex-row-reverse.items-center.list-reset
         %li
           %a.no-underline.text-white.hover:text-black
@@ -19,5 +18,3 @@
                 = link_to t("navbar.language_en"), { locale: 'en' }
               - else
                 = link_to t("navbar.language_sv"), { locale: 'sv' }
-
-                Rails.root: /home/koggs/projects/newsroom-a
