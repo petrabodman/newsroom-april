@@ -10,6 +10,6 @@
 = form_with scope: :comment, url: article_comments_path(@article), local: true do |form|
   = form.label t('comment.comment_content')
   = form.text_field :content, placeholder: t('comment.comment_content')
-  = form.submit t('comment.submit')
+  = form.submit t('comment.submit'), { class: 'text-black hover:text-white' }
 
-= link_to t('article.back_link'), root_path
+= link_to t('article.back_link'), root_path, { class: 'text-black hover:text-white' }
