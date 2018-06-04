@@ -1,13 +1,13 @@
 # config/chewy.yml
 # separate environment configs
-<% if ENV['chewy'] %>
-  test:
-    host: 'localhost:9200'
-    prefix: 'test'
+<% if ENV['CHEWY'] %>
+test:
+  host: 'localhost:9200'
+  prefix: 'test'
 <% else %>
   test:
-    host: 'localhost:9250'
-    prefix: 'test'
+  host: 'localhost:9250'
+  prefix: 'test'
 <% end %>
 development:
   host: 'localhost:9200'
