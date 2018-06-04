@@ -31,6 +31,5 @@ Before do
 end
 
 def use_test_cluster?
-  # !ENV["CI"] && !Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
-  false
+  !ENV["CI"] && !Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
 end
