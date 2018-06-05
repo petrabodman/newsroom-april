@@ -6,4 +6,9 @@ class Api::V1::ApiController < ApplicationController
   # def destroy_session
   #   request.session_options[:skip] = true
   # end
+
+  def index
+    article = Article.all
+    render json: { article: article }
+  end
 end
