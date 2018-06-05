@@ -16,6 +16,7 @@ gem 'pundit'
 gem 'rails-i18n'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'coveralls', require: false
