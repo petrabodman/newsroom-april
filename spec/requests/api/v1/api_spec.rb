@@ -9,14 +9,7 @@ RSpec.describe Api::V1::ApiController, type: :request do
       get '/api/v1/api'
 
       json_response = JSON.parse(response.body)
-      expected_response = [{"id"=>article.id,
-        "created_at"=>article.created_at,
-        "updated_at"=>article.updated_at,
-        "category_id"=>category.id,
-        "user_id"=>user.id,
-        "published"=>true,
-        "headline"=>"dave",
-        "content"=>"is mank"}]
+      expected_response = eval(file_fixture('article.txt').read)
       expect(response.status).to eq 200
       expect(json_response['article']).to eq expected_response.as_json
     end

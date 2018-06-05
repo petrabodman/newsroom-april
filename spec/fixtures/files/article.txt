@@ -1,0 +1,8 @@
+[{"id"=>article.id,
+  "created_at"=>article.created_at,
+  "updated_at"=>article.updated_at,
+  "category_id"=>category.id,
+  "user_id"=>user.id,
+  "published"=>true,
+  "headline"=>"dave",
+  "content"=>"is mank"}]
