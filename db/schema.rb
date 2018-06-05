@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2018_06_03_131441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
+    t.boolean "subscriber"
+    t.string "stripeid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
