@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:show]
   root controller: :articles, action: :index
+
+  namespace :api do
+    namespace :v1 do
+      resources :api_controller
+    end
+  end
 end
