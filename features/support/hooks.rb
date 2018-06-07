@@ -1,10 +1,20 @@
 Before('@search') do
   Chewy.strategy(:bypass)
-  Elasticsearch::Extensions::Test::Cluster.start(
-      port: 9250,
+  if ENV['CHEWY'] == 'ci'
+    options = {
+      port: 9200,
+      nodes: 1,
+      timeout: 120,
+      command: "nohup bash -c \"$SEMAPHORE_PROJECT_DIR/elasticsearch/bin/elasticsearch 2>&1\""
+    }
+  else
+    options = {
+      port: 9200,
       nodes: 1,
       timeout: 120
-  ) unless ENV['CHEWY'] == 'ci'
+    }
+  end
+  Elasticsearch::Extensions::Test::Cluster.start(options) 
    
   while !Elasticsearch::Extensions::Test::Cluster.running? do 
     sleep 1
@@ -14,5 +24,6 @@ Before('@search') do
 end
 
 After('@search') do 
-  Elasticsearch::Extensions::Test::Cluster.stop(port: 9250) unless ENV['CHEWY'] == 'ci'
+  port = ENV['CHEWY'] == 'ci' ? 9200 : 9250 
+  Elasticsearch::Extensions::Test::Cluster.stop(port: port)
 end
