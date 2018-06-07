@@ -5,5 +5,5 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  update_index('article') { self }
+  update_index('article') { self } unless Rails.env.test?
 end

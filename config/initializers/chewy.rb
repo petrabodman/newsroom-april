@@ -1,6 +1,6 @@
 Chewy.root_strategy = :atomic
-if ENV['TEST_RUN']
+if true
     Chewy.settings = {host: 'localhost:9250'}
- else
+else
     Chewy.settings = {host: 'localhost:9200'}
- end
+end
