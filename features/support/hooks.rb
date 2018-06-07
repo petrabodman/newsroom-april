@@ -4,7 +4,7 @@ Before('@search') do
       port: 9250,
       nodes: 1,
       timeout: 120
-  )
+  ) unless ENV['CHEWY'] == 'ci'
    
   while !Elasticsearch::Extensions::Test::Cluster.running? do 
     sleep 1
@@ -14,5 +14,5 @@ Before('@search') do
 end
 
 After('@search') do 
-  Elasticsearch::Extensions::Test::Cluster.stop(port: 9250)
+  Elasticsearch::Extensions::Test::Cluster.stop(port: 9250) unless ENV['CHEWY'] == 'ci'
 end
