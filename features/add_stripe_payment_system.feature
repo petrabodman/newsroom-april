@@ -4,6 +4,7 @@ Feature: Owner can receive payment via stripe
   I would like to have payment system connected to the site
 
 Background:
+    Given the following users exist 
           |email          | password |
           |test@test.com  | 12345678 |
 

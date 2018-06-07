@@ -60,6 +60,20 @@ When("I visit {string} edit page") do |article_title|
   visit edit_article_path(article)
 end
 
-Given("I click {string} stripe button") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I click {string} stripe button") do |button|
+   click_link_or_button
+   sleep 2
+   @stripe_iframe = all(iframe[name=stripe_checkout_app]).last
+end
+
+Given("I fill in the stripe field {string} with {string}") do |field_name, value|
+  within_iframe @stripe_iframe do
+    fill_in field_name, with: value
+  end
+end
+
+Given("I submit stripe form") do
+  within_iframe @stripe_iframe do
+    find('.Section-button').click
+  end
 end
