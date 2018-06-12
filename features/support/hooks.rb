@@ -28,17 +28,17 @@
 #   Elasticsearch::Extensions::Test::Cluster.stop(port: port)
 # end
 
-Before('@search') do
-  Chewy.strategy(:bypass)
-  Elasticsearch::Extensions::Test::Cluster.start(
-      port: 9200,
-      nodes: 1,
-      timeout: 120
-  )
+# Before('@search') do
+#   Chewy.strategy(:bypass)
+#   Elasticsearch::Extensions::Test::Cluster.start(
+#       port: 9200,
+#       nodes: 1,
+#       timeout: 120
+#   )
 
-  ArticleIndex.delete! if ArticleIndex.exists?
-  ArticleIndex.create! unless ArticleIndex.exists?
-end
+#   ArticleIndex.delete! if ArticleIndex.exists?
+#   ArticleIndex.create! unless ArticleIndex.exists?
+# end
 
 # After('@search') do 
 #   Elasticsearch::Extensions::Test::Cluster.stop(port: 9200)
