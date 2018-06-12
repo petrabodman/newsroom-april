@@ -40,6 +40,6 @@ Before('@search') do
   ArticleIndex.create! unless ArticleIndex.exists?
 end
 
-After('@search') do 
-  Elasticsearch::Extensions::Test::Cluster.stop(port: 9200)
-end
+# After('@search') do 
+#   Elasticsearch::Extensions::Test::Cluster.stop(port: 9200)
+# end
